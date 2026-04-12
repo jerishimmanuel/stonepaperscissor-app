@@ -12,7 +12,6 @@
                 border-radius: 5px;
                 cursor: pointer;
             }
-
             p{
                 font-size: 20px;
                 color: white;
@@ -54,16 +53,6 @@
                 losses: 0,
                 ties: 0
             };
-
-            /*
-            if(!score) {
-                score = {
-                    wins: 0,
-                    losses: 0,
-                    ties: 0
-                }
-            }
-                */
 
             function playGame(playerMove) {
                 const computerMove = pickComputerMove();
@@ -113,8 +102,6 @@ Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
                 
             localStorage.setItem('score',JSON.stringify(score));
             }
-            
-            
 
             function pickComputerMove() {
                 const randomNumber = Math.random();
