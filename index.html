@@ -7,14 +7,25 @@
                 padding: 10px;
                 margin: 5px;
                 font-size: 16px;
+                background-color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
             }
 
             p{
                 font-size: 20px;
+                color: white;
+                text-shadow: 2px 2px 5px black;
             }
         </style>
     </head>
-    <body style="font-family: Arial, Helvetica, sans-serif;">
+    <body style="
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Stone paper scissors.png');
+        background-size: cover;
+        background-repeat: repeat;
+    ">
         <p>Rock Paper Scissors</p>
         <button onclick="
             playGame('rock');
@@ -43,6 +54,16 @@
                 losses: 0,
                 ties: 0
             };
+
+            /*
+            if(!score) {
+                score = {
+                    wins: 0,
+                    losses: 0,
+                    ties: 0
+                }
+            }
+                */
 
             function playGame(playerMove) {
                 const computerMove = pickComputerMove();
@@ -92,6 +113,8 @@ Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
                 
             localStorage.setItem('score',JSON.stringify(score));
             }
+            
+            
 
             function pickComputerMove() {
                 const randomNumber = Math.random();
